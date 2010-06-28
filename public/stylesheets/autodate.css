@@ -1,0 +1,39 @@
+#date_popup{
+	background-color: #BBBBFF; 
+	width: 200px;
+	position: absolute;
+	z-index: 100;
+}
+
+#date_form #date_text{
+	margin-left: 5px;
+	position: relative;
+	background-color: #fff;
+	border: 1px ridge #98b2ca;
+	color: #366aa8;
+	font-size: 12px;
+}
+
+div.autocomplete {
+	margin: 0px;
+	margin-left: 5px;
+	padding-left: 0px;
+	width: 180px;
+	border: .1em ridge #98b2ca;
+}
+
+div.autocomplete li{
+	padding-left: 5px;
+	color: #3b5998;
+	border-top: none;
+	background-color: #fff;
+	font: 12px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	list-style: none url(/images/rating/10a.png) inside;
+}
+
+div.autocomplete li.date_selected {
+	color: #fff;
+	list-style: none url(/images/rating/10.png) inside;
+	background-color: #3165a4;
+}
+

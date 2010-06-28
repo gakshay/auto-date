@@ -1,0 +1,12 @@
+<h5>1. Auto date on "HTML a" Tag: Click on the date below</h5>
+<br />
+<% date = Date.today.strftime("%B %d %Y")%>
+<%= link_to_function date, "new AutoDate(this);", :id => "link_date" %>
+<br />
+<br />
+<br />
+<h5>2. Auto date on "HTML input" Tag: click in the box</h5>
+<br />
+<%= text_field_tag "input_date", date, :onclick => "new AutoDate(this);"%>
+<%#= submit_tag %>
+<br />

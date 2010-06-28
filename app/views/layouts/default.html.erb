@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Auto Date Picker</title>
+    <%= stylesheet_link_tag "default" %>
+    <%= stylesheet_link_tag "autodate" %>
+    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag "autodate" %>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div class="">
+                <h1>Auto Date Selector</h1>
+                <br />
+                <h6>DD-MM-YY/MM-DD-YY/Mon-DD-YY/DD-Mon-YY, any seperator("/ - space ."), type literals to explore more</h6>
+            </div>
+
+            <div class="clr"></div>
+        </div>
+
+        <div id="flash_messages" align="center">
+            <% ["error", "notice"].each do |fl| %>
+            <%= flash[fl.to_sym] %>
+            <br />
+            <% end %>
+        </div>
+        <%= yield %> 
+
+    </div>
+</body>
+</html>
