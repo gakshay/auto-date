@@ -1,7 +1,7 @@
 /*auto Date*/
 
-ONLY_FUTURE_DATE = true;
-MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Sep", "Oct", "Nov", "Dec"];
+ONLY_FUTURE_DATE = false;
+MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 var dateWord = /^(to(day)?|to(morrow)?|ye(sterday)?|ch(ristmas)?|new(\syear)?|((next|last)\s)?(wee(k)?|wee(kend)?|mo(nth)?|mo(nday)?|tu(esday)?|wed(nesday)?|th(ursday)?|f(riday)?|sa(turday)?|su(nday)?))/gi;
 var dateMMDD  = /^(1[0-2]|0?[1-9])([\.\/\-\s])((0?[1-9])|[12][0-9]|3[01])([\.\/\-\s\'])?(\d{2})?$/gi;
 var dateDDMM  = /^((0?[1-9])|[12][0-9]|3[01])([\.\/\-\s])(1[0-2]|0?[1-9])([\.\/\-\s\'])?(\d{2})?$/gi;
@@ -170,7 +170,7 @@ var AutoDate = Class.create ({
 	common: function(dd, mm, yy, word) {
 		var date = new Date();
 		date.setMonth(mm); date.setDate(dd);  date.setFullYear(yy);
-		if (dateVer(dd,mm+1,yy) ){
+		if (!isPastDate(date.getDate(),date.getMonth()+1, date.getFullYear()) ){
 			var matchList = [word, dateFormat(date)];
 			this.menuDate(matchList);
 		}
@@ -284,7 +284,18 @@ function dateVer (dd, mm, yyyy) {
 }
 
 function dateFormat(date) {
-	return date.getDate() + " " + MONTHS[date.getMonth()] + " " + date.getFullYear()
+	if (!isPastDate(date.getDate(),date.getMonth()+1, date.getFullYear()) ){
+		return date.getDate() + " " + MONTHS[date.getMonth()] + " " + date.getFullYear()
+	}
+}
+
+
+function isPastDate(day, month, year) {
+	today = new Date();
+	date = new Date(year,month-1,day) 
+	if (ONLY_FUTURE_DATE && ( date < today)) {
+		return true;
+	}
 }
 
 function monNo (mon) {
@@ -302,6 +313,7 @@ function monNo (mon) {
 	if (mon.match(/^dec(ember)?/gi)) {return 12;}
 	else return false;
 }
+
 /**
  * DHTML date validation script for dd/mm/yyyy. Courtesy of SmartWebby.com (http://www.smartwebby.com/dhtml/)
  */
@@ -340,13 +352,6 @@ function DaysArray(n) {
    return this;
 }
 
-function isPastDate(date, month, year) {
-	today = new Date();
-	if (ONLY_FUTURE_DATE && (today > new Date(year,month,date))) {
-		return true;
-	}
-}
-
 function isDate(dtStr){
 	var daysInMonth = DaysArray(12);
 	var pos1=dtStr.indexOf(dtCh);
@@ -366,7 +371,7 @@ function isDate(dtStr){
 	if (pos1==-1 || pos2==-1){
 		return false;
 	}
-	if (isPastDate(year,month,day)){ return false;}
+	//if (isPastDate(day, month, year)){ return false;}
 	if (strMonth.length<1 || month<1 || month>12){return false;}
 	if (strDay.length<1 || day<1 || day>31 || (month==2 && day>daysInFebruary(year)) || day > daysInMonth[month]){
 		return false; }
