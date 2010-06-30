@@ -51,3 +51,6 @@ ONLY_FUTURE_DATE to only display future dates when a user search for a date e.g.
  
 You can set "ONLY_FUTURE_DATE = true" by calling "new AutoDate(this, true)". It will ensure only future date is used.
 If your application needs only future date set "ONLY_FUTURE_DATE = true;" in auto_date.js, by default its false.
+
+For further help or any feedback, please feel free to mail me at akshaygupta.dev@gmail.com 
+
