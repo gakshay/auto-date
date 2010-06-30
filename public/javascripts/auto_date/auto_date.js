@@ -1,4 +1,4 @@
-/*auto Date*/
+
 
 ONLY_FUTURE_DATE = false;
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -9,8 +9,10 @@ var dateDDMon = /^((0?[1-9])|[12][0-9]|3[01])([\.\/\-\s\'])?(\w{3,9})([\.\/\-\s\
 var dateMonDD = /^(\w{3,9})([\.\/\-\s\'])?((0?[1-9])|[12][0-9]|3[01])?([\.\/\-\s\'])?(\d{2})?$/gi;
 
 var AutoDate = Class.create ({
-	initialize : function (element) {
+	initialize : function (element, future_date) {
 		cal = this;
+		ONLY_FUTURE_DATE = (future_date == null) ? false : future_date;
+		console.log(ONLY_FUTURE_DATE);
 		this.element = element;
 		this.dateId = element.id;
 		this.preDate = (this.element.tagName == "INPUT") ? $(this.dateId).value : $(this.dateId).innerHTML;

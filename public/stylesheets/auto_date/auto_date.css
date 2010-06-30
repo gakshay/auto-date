@@ -5,6 +5,10 @@
 	z-index: 100;
 }
 
+#date_popup h4{
+	margin-left: 5px;
+}
+
 #date_form #date_text{
 	margin-left: 5px;
 	position: relative;
@@ -19,7 +23,7 @@ div.autocomplete {
 	margin-left: 5px;
 	padding-left: 0px;
 	width: 180px;
-	border: .1em ridge #98b2ca;
+	border: .1em solid #000;
 }
 
 div.autocomplete li{
@@ -28,12 +32,12 @@ div.autocomplete li{
 	border-top: none;
 	background-color: #fff;
 	font: 12px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-	list-style: none url(/images/rating/10a.png) inside;
+	list-style: none inside;
 }
 
 div.autocomplete li.date_selected {
 	color: #fff;
-	list-style: none url(/images/rating/10.png) inside;
-	background-color: #3165a4;
+	list-style: none inside;
+	background-color: #BBBBFF;
 }
 
