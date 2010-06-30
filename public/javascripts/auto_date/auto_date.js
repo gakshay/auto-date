@@ -1,4 +1,14 @@
-
+// -----------------------------------------------------------------------------------
+//
+//	Autodate v1.0.1 : a prototype based autocomplete date picker
+//	by Akshay Gupta (gakshay) - http://gakshay.wordpress.com
+//	Last Modification: 30/06/2010
+//
+//	Questions, comments, bugs? - see the project page: http://code.google.com/p/auto-date
+//
+//	Released under MIT-LICENSE
+//
+// -----------------------------------------------------------------------------------
 
 ONLY_FUTURE_DATE = false;
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];

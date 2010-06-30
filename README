@@ -1,3 +1,12 @@
+==== Details ====
+Auto Date v1.0.1 is a JS based auto-complete date selector which uses the Prototype Framework. Its an alternative to calender in browser which sounds annoying when one needs to enter future/past dates.
+
+It validates the date before displaying the possible options. It make sure by prompting which date you are thinking in your mind. Say for example one types "01/05" it prompts 05 jan or 01 May. Sounds great!
+
+It also understand certain literals as one usually writes in day to day communication e.g today, yesterday, tomorrow, coming weekend, new year, christmas, last month, saturday etc.
+
+ONLY_FUTURE_DATE feature lets the user only to type future date from today. So it will not display past dates. Read more on the WIKI, see the example in source code (index.html) and feel free to provide suggestion/feedback.
+
 == How to Use:
 
 Download the code from the source. Extract all the files and include in your project. Read Part 1 - Setup
@@ -20,7 +29,7 @@ Accepts the folloeing date formats:
     After x days/month/year
     Before x days/month/year
 
-  So just start typing and its fast autocomplete feature will take your heart away. Best o all, its all client side so no burden on your server.
+So just start typing and its fast autocomplete feature will take your heart away. Best o all, its all client side so no burden on your server.
   
 == Part 1 - Setup
 
